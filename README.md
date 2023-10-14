@@ -163,3 +163,61 @@ emprestado: Uma variável booleana que controla se o livro está emprestado ou n
 
 12-conectarLivrosAosUsuarios(livros, usuarios);: O método conectarLivrosAosUsuarios é chamado para conectar aleatoriamente os livros aos usuários e simular empréstimos.
 
+
+ **Classe Biblioteca**
+
+
+A classe  Biblioteca representa um sistema de biblioteca.
+
+1-public class Biblioteca {: Começa a definição da classe Biblioteca.
+
+2-Dois campos (ou atributos) são declarados:
+
+catalogo: Representa o catálogo da biblioteca, ou seja, a lista de livros disponíveis na biblioteca.
+
+usuarios: Representa a lista de usuários registrados na biblioteca.
+
+3-No construtor public Biblioteca(), duas listas vazias são inicializadas para catalogo e usuarios quando um objeto da classe Biblioteca é criado.
+
+4-public void adicionar_livro(Livro livro): Este método permite adicionar um livro ao catálogo da biblioteca. O parâmetro livro é um objeto da classe Livro, que é adicionado à lista catalogo.
+
+5-public void adicionar_usuario(Usuario usuario): Este método permite adicionar um usuário à lista de usuários da biblioteca. O parâmetro usuario é um objeto da classe Usuario que é adicionado à lista usuarios.
+
+6-public void emprestar_livro(String isbn, int matriculaUsuario): Este método é usado para emprestar um livro com base no ISBN (número de identificação do livro) e na matrícula do usuário.
+
+7-public List<Livro> listar_livros_emprestados(): Este método cria uma lista de livros emprestados. Ele percorre a lista catalogo de livros e verifica se cada livro está emprestado, usando o método estaEmprestado da classe Livro. Se um livro estiver emprestado, ele é adicionado à lista livrosEmprestados, que é então retornada.
+
+
+ **Classe Acervo**
+ 
+
+ A classe acervo  utiliza a classe Biblioteca para simular a gestão de um acervo de livros em uma biblioteca. 
+
+1-public class Acervo {: Começa a definição da classe Acervo, que contém o método main como ponto de entrada do programa.
+
+2-Biblioteca biblioteca = new Biblioteca();: É criada uma instância da classe Biblioteca chamada biblioteca. Essa instância representará a biblioteca que será usada para gerenciar o acervo de livros e empréstimos.
+
+3-Random random = new Random();: É criada uma instância da classe Random para gerar números aleatórios. Isso será usado para realizar empréstimos aleatórios de livros para usuários.
+
+4-O primeiro loop for é usado para adicionar 50 livros ao acervo da biblioteca. Cada livro é criado com um título, autor e ISBN únicos e, em seguida, é adicionado à biblioteca usando o método adicionar_livro.
+
+5-O segundo loop for é usado para adicionar 25 usuários à biblioteca. Cada usuário é criado com um nome, CPF e matrícula fictícia e, em seguida, é adicionado à biblioteca usando o método adicionar_usuario.
+
+6-O terceiro loop for é usado para realizar 10 empréstimos de livros aleatoriamente. Para cada empréstimo, um livro é escolhido aleatoriamente (índice de livro) entre os 50 disponíveis e um usuário é escolhido aleatoriamente (índice de usuário) entre os 25 disponíveis. O ISBN do livro e a matrícula do usuário são usados para realizar o empréstimo com o método emprestar_livro da classe Biblioteca.
+
+7-Por fim, a lista de livros emprestados é exibida no console. A lista de livros emprestados é obtida usando o método listar_livros_emprestados da classe Biblioteca, e os detalhes de cada livro emprestado são impressos no console usando o método exibir_info da classe Livro.
+
+
+
+
+
+**Chegamos ao fim, espero que tenha gostado do programa.**
+
+
+
+
+
+
+
+
+
